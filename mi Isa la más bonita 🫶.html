@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ti</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .heart {
+            color: red;
+            font-size: 5rem;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        .message {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .final-image {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <div class="message" id="message">Eres la persona más especial del mundo.</div>
+        <button class="button" id="button" onclick="changeMessage()">Haz clic para más amor</button>
+        
+    </div>
+
+    <script>
+        const messages = [
+            "Eres la persona más especial del mundo.",
+            "quiero ser parte de tu dia a dia .",
+            "Tu sonrisa ilumina mi vida.",
+            "eres una niña super bonita y especial para mi .",
+            "Eres increible con una manera de pensar unica .",
+            "Gracias por lllegar a mi vida te quiero <3."
+        ];
+        let messageIndex = 0;
+
+        function changeMessage() {
+            messageIndex++;
+            if (messageIndex < messages.length) {
+                document.getElementById('message').textContent = messages[messageIndex];
+            } else {
+                document.getElementById('message').style.display = 'none';
+                document.getElementById('button').style.display = 'none';
+                document.getElementById('finalImage').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
